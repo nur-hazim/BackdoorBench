@@ -90,18 +90,12 @@ The implementations of more backdoor methods, as well as their evaluations are o
 You can run the following script to configure the necessary environment.
 
 ```
-git clone git@github.com:SCLBD/BackdoorBench.git
+git clone https://github.com/nur-hazim/BackdoorBench.git
 cd BackdoorBench
 conda create -n backdoorbench python=3.8
 conda activate backdoorbench
 sh ./sh/install.sh
 sh ./sh/init_folders.sh
-```
-
-You can also download backdoorbench by pip.
-
-```
-pip install -i https://test.pypi.org/simple/ backdoorbench
 ```
 
 The pip version of backdoorbench can be viewed at this [link](https://github.com/SCLBD/bdzoo2-pip)
@@ -112,16 +106,16 @@ The pip version of backdoorbench can be viewed at this [link](https://github.com
 
 <a href="#top">[Back to top]</a>
 
-This is a example for BadNets
+This is an example for BadNets
 
 1. Generate trigger
 
-If you want to change the trigger for BadNets, you should go to the `./resource/badnet`, and follow the readme there to generate new trigger pattern.
+If you want to change the trigger for BadNets, you should go to the `./resource/badnet`, and follow the readme there to generate a new trigger pattern.
 ```shell
 python ./resource/badnet/generate_white_square.py --image_size 32 --square_size 3 --distance_to_right 0 --distance_to_bottom 0 --output_path ./resource/badnet/trigger_image.png
 ```
 Note that for data-poisoning-based attacks (BadNets, Blended, Label Consistent, Low Frequency, SSBA). 
-Our scripts in `./attack` are just for training, they do not include the data generation process.(Because they are time-comsuming, and we do not want to waste your time.) 
+Our scripts in `./attack` are just for training, they do not include the data generation process. (Because they are time-consuming, and we do not want to waste your time.) 
 You should go to the `./resource` folder to generate the trigger for training.
 
 2. Backdoor training
